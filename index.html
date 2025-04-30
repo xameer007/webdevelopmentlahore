@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHive.AI - SEO, Digital and Social Media Marketing Agency in Pakistan</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #10b981;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --accent-color: #7c3aed;
+            --text-color: #334155;
+            --light-text: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            background-color: var(--light-color);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--light-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -8px;
+            left: 25%;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header Styles */
+        .header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 2rem;
+        }
+        
+        .nav-link {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(124, 58, 237, 0.9)), url('/api/placeholder/1200/600') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 76px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            background-color: var(--primary-color);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .service-icon i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .service-content {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        
+        .service-content h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .service-content h4 {
+            color: var(--secondary-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+        
+        .service-content ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Results Section */
+        .results {
+            background-color: var(--light-color);
+        }
+        
+        .results-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .result-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            height: 400px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-details i {
+            margin-right: 1rem;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--light-text);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary-color);
+        }
+        
+        .footer-about p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icons {
+            display: flex;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 76px;
+                left: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 1.5rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Tech<span>Hive</span>.AI</a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#results" class="nav-link">Case Studies</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>SEO, Digital and Social Media Marketing Agency in Pakistan</h1>
+            <p>We bring together SEO, digital marketing, social media, artificial intelligence, and software development under one roof. We're not just another tech company – we're your partners in navigating Pakistan's unique digital ecosystem.</p>
+            <a href="#contact" class="btn btn-secondary">Schedule Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive digital solutions tailored for the Pakistani market</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>SEO That Works for Pakistani Businesses</h3>
+                        
+                        <h4>Local Search Strategies That Get Results</h4>
+                        <p>At TechHive.AI, we understand that SEO in Pakistan requires a special approach. Our team creates strategies specifically designed for:</p>
+                        <ul>
+                            <li>How Pakistanis search on mobile devices</li>
+                            <li>Voice search in both English and Urdu</li>
+                            <li>Location-specific searches across major Pakistani cities</li>
+                        </ul>
+                        <p>We make sure your business shows up when local customers are looking for you.</p>
+                        
+                        <h4>Technical Excellence Without the Jargon</h4>
+                        <p>Our technical team handles the complex aspects of SEO so you don't have to worry about:</p>
+                        <ul>
+                            <li>Making your website structure search-friendly</li>
+                            <li>Improving page loading speed (Core Web Vitals)</li>
+                            <li>Implementing proper code markups (schema) that help search engines understand your content</li>
+                        </ul>
+                        <p>We identify and fix technical issues that might be keeping your website from ranking well in Pakistani search results.</p>
+                        
+                        <h4>Content That Builds Trust and Authority</h4>
+                        <p>We create content that showcases your expertise and builds trust with both customers and search engines. Our content strategies include both English and Urdu options to connect with Pakistan's diverse audiences. Every piece of content we create is designed to attract potential customers actively searching for your products or services.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Marketing That Delivers Real Results</h3>
+                        
+                        <h4>Campaigns That Focus on Your Business Goals</h4>
+                        <p>TechHive.AI's digital marketing approach starts with understanding what success means for your business. We track how customers find you across different channels and optimize your marketing budget to focus on what's actually working.</p>
+                        
+                        <h4>Google Ads Management That Maximizes Your Budget</h4>
+                        <p>Our PPC specialists create Google Ads campaigns that:</p>
+                        <ul>
+                            <li>Target the right audience segments in Pakistan</li>
+                            <li>Focus on conversions, not just clicks</li>
+                            <li>Bring previous visitors back through smart remarketing</li>
+                        </ul>
+                        <p>We help you reach potential customers across Google's network without wasting your marketing budget.</p>
+                        
+                        <h4>Email Marketing That Converts</h4>
+                        <p>We design email sequences that send the right message to the right person at the right time. Our targeted approach means your emails will:</p>
+                        <ul>
+                            <li>Get opened more often</li>
+                            <li>Generate more clicks</li>
+                            <li>Convert more readers into customers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Social Media That Connects With Pakistani Audiences</h3>
+                        
+                        <h4>Platform-Specific Strategies That Work</h4>
+                        <p>TechHive.AI tailors social media approaches for Facebook, Instagram, LinkedIn, and Twitter based on how Pakistanis actually use these platforms. We create content calendars that build engagement and establish your brand as a leader in your industry.</p>
+                        
+                        <h4>Content That Stops the Scroll</h4>
+                        <p>Our creative team produces:</p>
+                        <ul>
+                            <li>Eye-catching visuals that reflect Pakistani aesthetics</li>
+                            <li>Engaging copy that speaks to local audiences</li>
+                            <li>Video content optimized for each platform</li>
+                        </ul>
+                        <p>Everything we create is designed to resonate with Pakistani users and work well with each platform's algorithms.</p>
+                        
+                        <h4>Social Insights You Can Actually Use</h4>
+                        <p>We implement social listening tools that help you understand what people are saying about your brand online. Our insights go beyond basic metrics to show you how you stack up against competitors and provide practical ways to improve your social presence.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>AI Solutions Made Simple and Practical</h3>
+                        
+                        <h4>Smart Automation for Pakistani Businesses</h4>
+                        <p>TechHive.AI brings the power of AI to Pakistani businesses of all sizes. We implement systems that:</p>
+                        <ul>
+                            <li>Use machine learning to improve operations</li>
+                            <li>Predict trends and customer behaviors</li>
+                            <li>Extract valuable insights from your existing data</li>
+                        </ul>
+                        
+                        <h4>Chatbots That Actually Help Your Customers</h4>
+                        <p>Our conversational AI solutions provide 24/7 support to your customers in a natural, helpful way. We develop systems that can qualify leads and guide prospects through your sales process, making your team more efficient.</p>
+                        
+                        <h4>AI Marketing That Personalizes the Customer Experience</h4>
+                        <p>We build:</p>
+                        <ul>
+                            <li>Tools that map and improve the customer journey</li>
+                            <li>Systems that recommend relevant content to each visitor</li>
+                            <li>Automated analysis of customer sentiment</li>
+                        </ul>
+                        <p>These solutions help create personalized experiences that convert more visitors into customers.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Software Development for the Pakistani Market</h3>
+                        
+                        <h4>Custom Solutions Built for Your Business</h4>
+                        <p>TechHive.AI develops enterprise-quality applications designed specifically for Pakistan's business environment. We help modernize outdated systems while preserving the important business processes you rely on.</p>
+                        
+                        <h4>Mobile Apps That Pakistani Users Love</h4>
+                        <p>We create mobile applications that work seamlessly across different devices, engaging Pakistan's growing smartphone user base. Our progressive web apps deliver app-like experiences through the browser, helping you reach more users while keeping development costs reasonable.</p>
+                        
+                        <h4>Websites That Drive Business</h4>
+                        <p>Our web development includes:</p>
+                        <ul>
+                            <li>E-commerce solutions compatible with Pakistani payment systems</li>
+                            <li>Easy-to-update content management systems</li>
+                            <li>Mobile-friendly designs for Pakistan's smartphone-first users</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real Results for Pakistani Businesses</h2>
+                <p>TechHive.AI has helped transform businesses across multiple industries in Pakistan</p>
+            </div>
+            <div class="results-container">
+                <div class="result-card">
+                    <div class="result-number">157%</div>
+                    <h3>Increased Website Traffic</h3>
+                    <p>For a Pakistani Retailer: We increased website visitors by 157% and online sales conversion by 23% through combined SEO and user experience improvements.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">342</div>
+                    <h3>Qualified B2B Leads</h3>
+                    <p>For a Manufacturing Business: We generated 342 qualified business leads in just 3 months using targeted LinkedIn campaigns.</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">31%</div>
+                    <h3>Cost Reduction</h3>
+                    <p>For a Financial Services Provider: We reduced operational costs by 31% with custom software automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="/api/placeholder/600/400" alt="TechHive.AI Team">
+                </div>
+                <div class="about-content">
+                    <h2>Why TechHive.AI Understands Pakistan Better</h2>
+                    
+                    <h3>Local Market Knowledge That Makes a Difference</h3>
+                    <p>Our deep understanding of Pakistani consumers and cultural contexts allows us to create digital strategies that truly connect with local audiences. We constantly research regional trends to find opportunities specific to Pakistan's evolving digital landscape.</p>
+                    
+                    <p>The digital landscape in Pakistan is growing faster than ever before. With smartphone usage reaching nearly half the population and internet adoption climbing 25% each year, businesses across Pakistan are looking for trusted partners to help them thrive online.</p>
+                    
+                    <h3>The Power of Integrated Services</h3>
+                    <p>At TechHive.AI, we bring together SEO, digital marketing, social media, artificial intelligence, and software development under one roof. We're not just another tech company – we're your partners in navigating Pakistan's unique digital ecosystem with solutions that actually work for local businesses.</p>
+                    
+                    <p>Our teams work together to ensure consistent messaging across all your digital channels. This unified approach eliminates disconnected experiences and builds stronger recognition and loyalty for your brand.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Start Your Digital Transformation with TechHive.AI</h2>
+                <p>Contact our team today for a comprehensive review of your current digital presence</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+                        <p><i class="fas fa-phone"></i> +92 123 456 7890</p>
+                        <p><i class="fas fa-envelope"></i> info@techhive.ai</p>
+                    </div>
+                    <h3>Ready to grow your business?</h3>
+                    <p>Contact our team today for a comprehensive review of your current digital presence and discover opportunities you might be missing. Whether you're a startup looking to grow quickly or an established business aiming for digital excellence, TechHive.AI has solutions that fit your needs.</p>
+                    <p>Schedule your free consultation today and begin your journey to digital success in Pakistan's competitive marketplace.</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Schedule a Free Consultation</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="seo">SEO Services</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="social-media">Social Media Management</option>
+                                <option value="ai-solutions">AI Solutions</option>
+                                <option value="software">Software Development</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Tech<span>Hive</span>.AI</a>
+                    <p>At TechHive.AI, we bring together SEO, digital marketing, social media, artificial intelligence, and software development under one roof for Pakistani businesses.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#results">Case Studies</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">SEO Services</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Social Media Management</a></li>
+                        <li><a href="#">AI Solutions</a></li>
+                        <li><a href="#">Software Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>Islamabad, Pakistan</li>
+                        <li>+92 123 456 7890</li>
+                        <li>info@techhive.ai</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 TechHive.AI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- For icons - you would need to include Font Awesome in a real implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    
+    <!-- Basic JavaScript for mobile menu toggle -->
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
